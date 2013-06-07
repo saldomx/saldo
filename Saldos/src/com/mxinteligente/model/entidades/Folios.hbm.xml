@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/05/2011 12:59:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.mxinteligente.model.entidades.Folios" table="folios" catalog="edfindb">
+
+          <id name="folio" type="big_integer">
+            <column name="folio" />
+        </id>
+       
+         <property name="tipo" type="string">
+            <column name="codigo" length="20" not-null="true" >
+            </column>
+        </property>
+        
+        <property name="usuario" type="string">
+            <column name="usuario" length="100"  >
+            </column>
+        </property>
+  
+    </class>
+</hibernate-mapping>

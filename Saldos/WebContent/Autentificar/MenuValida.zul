@@ -1,0 +1,25 @@
+<zk>
+<include id="includeStyle" src="/Estilos/style.zul" />
+	<borderlayout width="100%" height="100%"  >
+		<north border="none" size="10%" class="header"  >
+			<include src="/main/headerlogout.zul" />
+		</north>
+		<center border="none" flex="true" class="center">
+			<hlayout>
+				<!--  
+				<div hflex="15" vflex="1" class="center-left">
+					<include src="/main/sidebar.zul"
+						class="center-left-inner" />
+				</div>
+				-->
+				<div hflex="60" vflex="1" class="center-right">
+					<include src="/Autentificar/validacion.zul" />
+				</div>
+				
+			</hlayout>
+		</center>
+		<south border="none" class="footer" size="10%">
+			<include src="/main/footer.zul" />
+		</south>
+	</borderlayout>
+</zk>

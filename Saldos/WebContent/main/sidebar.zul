@@ -1,0 +1,30 @@
+<vlayout xmlns:h="native" vflex="1">
+    <label class="sidebar-title" value="ABOUT" />
+    <separator class="sidebar-bar" />
+ 
+    <label class="sidebar-title" value="MENU" />
+    <h:ul>
+        <h:li> <label class="sidebar-content" value="Mi Saldo" /></h:li>
+        <h:li> <label class="sidebar-content" value="Agenda" /></h:li>
+        <h:li><label class="sidebar-content" value="Pagos Pendientes" /></h:li>
+        <h:li><label class="sidebar-content" value="Catalago de Ingresos" /></h:li>
+        <h:li><label class="sidebar-content" value="Catalago de Gastos" /></h:li>
+        <h:li><label class="sidebar-content" value="Recomendaciones" /></h:li>
+        <h:li><label class="sidebar-content" value="Ayuda" /></h:li>
+    </h:ul>
+    <separator class="sidebar-bar" />
+    <label class="sidebar-title" value="RSS" />
+    <h:ul>
+        <h:li><label class="sidebar-content" value="Revista del Consumidor" /></h:li>
+        <h:li><label class="sidebar-content" value="Ofertas" /></h:li>
+        <h:li><label class="sidebar-content" value="Tipo de Cambio" /></h:li>
+        <h:li><label class="sidebar-content" value="Noticias" /></h:li>
+        <h:li><label class="sidebar-content" value="Bancos" /></h:li>       
+    </h:ul>
+    <separator class="sidebar-bar" />
+ 
+ 
+   
+ 
+ 
+</vlayout>

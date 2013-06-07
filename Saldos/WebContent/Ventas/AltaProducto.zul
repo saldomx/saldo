@@ -1,0 +1,200 @@
+<?page title="Registro" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./win"?>
+
+<zk>
+<window id="win" title="Nuevo Producto" border="none" width="500px" height="550px" closable="true"
+apply="com.mxinteligente.controller.ventas.AltaProducto">
+
+<borderlayout  >
+		<center>			
+			<div>
+ 			
+			
+        	 	<grid id="formRegistro">
+					<columns >
+						<column width="20%" align="right" />
+						<column width="80%" />
+					</columns>
+					<rows >
+						<row >
+							Nombre
+							<hbox align="center">
+							<textbox id="textNombre" maxlength="100" constraint="no empty" width="200px"></textbox>
+							</hbox>
+						</row>
+						<row>
+							Codigo
+							<hbox>
+							<textbox id="textCodigo" maxlength="20" constraint="no empty" width="200px"></textbox>
+							</hbox>
+						</row>
+						<row>
+							Descripción	
+							<hbox>
+							<textbox id="textDescripcion" maxlength="300" constraint="no empty" width="200px" rows="3"></textbox>
+							</hbox>
+						</row>
+						<row>
+							Precio
+							<hbox>
+							<textbox id="decPrecio"  constraint="no empty" width="200px"></textbox>
+							</hbox>
+						</row>
+						<row spans="2">
+						<tabbox id="tbImagen" height="300px">
+    						<tabs id="tabs">
+    							<tab id="img1" label="Imagen 1" />
+    							<tab id="img2" label="imagen 2" />
+    							<tab id="img3" label="Imagen 3" />
+    						</tabs>
+    						<tabpanels>
+    							<tabpanel>
+
+    								<grid>
+    									<columns>
+    										<column label=""
+    											align="center" />
+    										<column label=""
+    											align="center" />
+    									</columns>
+    									<rows>
+    										<row>
+    										
+    											<button
+    												label="Subir Imagen" upload="true,maxsize=500">
+    												<attribute name="onUpload"><![CDATA[
+	org.zkoss.util.media.Media media = event.getMedia();
+	if (media instanceof org.zkoss.image.Image) {
+		org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+		image1.setContent(event.media);
+		image1.setVisible(true);
+	} else {
+		Messagebox.show("No es una imagen válida: " + media, "Error",
+				Messagebox.OK, Messagebox.ERROR);
+		break;
+	}
+]]></attribute>
+    											</button>
+    											
+    											<button label="Quitar"  >
+    											<attribute name="onClick"><![CDATA[
+													org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+													image1.setVisible(false);
+													
+												]]></attribute>
+    											</button>
+
+    										</row>
+    										<row spans="2">
+    											<image id="image1"
+    												width="200px" height="200px" />
+    										</row>
+    									</rows>
+    								</grid>
+
+
+    							</tabpanel>
+    							<tabpanel>					<grid>
+    									<columns>
+    										<column label=""
+    											align="center" />
+    										<column label=""
+    											align="center" />
+    									</columns>
+    									<rows>
+    										<row>
+    										
+    											<button
+    												label="Subir Imagen" upload="true,maxsize=500">
+    												<attribute name="onUpload"><![CDATA[
+	org.zkoss.util.media.Media media = event.getMedia();
+	if (media instanceof org.zkoss.image.Image) {
+		org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+		image2.setContent(event.media);
+		image2.setVisible(true);
+	} else {
+		Messagebox.show("No es una imagen válida: " + media, "Error",
+				Messagebox.OK, Messagebox.ERROR);
+		break;
+	}
+]]></attribute>
+    											</button>
+    											
+    											<button label="Quitar"  >
+    											<attribute name="onClick"><![CDATA[
+													image2.setVisible(false);
+												]]></attribute>
+    											</button>
+
+    										</row>
+    										<row spans="2">
+    											<image id="image2"
+    												width="200px" height="200px" />
+    										</row>
+    									</rows>
+    								</grid></tabpanel>
+    							<tabpanel>					<grid>
+    									<columns>
+    										<column label=""
+    											align="center" />
+    										<column label=""
+    											align="center" />
+    									</columns>
+    									<rows>
+    										<row>
+    										
+    											<button
+    												label="Subir Imagen" upload="true,maxsize=500">
+    												<attribute name="onUpload"><![CDATA[
+	org.zkoss.util.media.Media media = event.getMedia();
+	if (media instanceof org.zkoss.image.Image) {
+		org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+		image3.setContent(event.media);
+		image3.setVisible(true);
+	} else {
+		Messagebox.show("No es una imagen válida: " + media, "Error",
+				Messagebox.OK, Messagebox.ERROR);
+		break;
+	}
+]]></attribute>
+    											</button>
+    											
+    											<button label="Quitar"  >
+    											<attribute name="onClick"><![CDATA[
+													org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+													image3.setVisible(false);
+													
+												]]></attribute>
+    											</button>
+
+    										</row>
+    										<row spans="2">
+    											<image id="image3"
+    												width="200px" height="200px" />
+    										</row>
+    									</rows>
+    								</grid></tabpanel>
+    						</tabpanels>
+						</tabbox>
+						</row>						
+					</rows>
+				</grid>	
+			
+<toolbar id="tb" height="20px" sclass="toolbarColor">
+			<div>
+				<toolbarbutton id="btnGuardar"
+					image="/images/Floppy-16.png" tooltiptext="Guardar" >
+					  
+					</toolbarbutton>
+				
+			</div>
+		</toolbar>
+			</div>
+				
+		</center>	
+		
+		
+	</borderlayout>
+</window>
+
+</zk>

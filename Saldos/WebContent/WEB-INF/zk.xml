@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Created by ZK Studio
+-->
+
+<zk>
+	<device-config>
+		<device-type>ajax</device-type>
+		<timeout-uri>/index.jsp</timeout-uri><!-- An empty URL can cause the browser to reload the same URL -->
+	</device-config>
+	
+	<listener>
+    <description>ThreadLocal Synchronization Listener</description>
+    <listener-class>org.zkoss.zkplus.util.ThreadLocalListener</listener-class>
+</listener>
+
+<preference>
+    <name>ThreadLocal</name>
+    <value>
+         org.springframework.security.context.ThreadLocalSecurityContextHolderStrategy=contextHolder
+    </value>
+</preference>
+	<system-config>
+    <disable-event-thread/>
+</system-config>
+	
+	
+<system-config>
+    <disable-event-thread/>
+</system-config>
+
+
+</zk>

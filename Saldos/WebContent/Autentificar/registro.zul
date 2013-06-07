@@ -1,0 +1,165 @@
+<?page title="Registro" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winreg"?>
+
+<zk>
+<window id="winreg" title="Registro" border="none" width="100%" height="100%"
+apply="com.mxinteligente.controller.seguridad.Registro">
+<borderlayout  >
+		<center>			
+			<div>
+ 			
+			
+        	 	<grid id="formRegistro">
+					<columns >
+						<column width="20%" align="right" />
+						<column width="80%" />
+					</columns>
+					<rows >
+						<row >
+							Nombre
+							<hbox align="center">
+							<textbox id="textNombre" maxlength="80" constraint="no empty"></textbox>
+							</hbox>
+						</row>
+						<row>
+							Apellido Paterno
+							<hbox>
+							<textbox id="textApp" maxlength="150" constraint="no empty"></textbox>
+							</hbox>
+						</row>
+						<row>
+							Apellido Materno	
+							<hbox>
+							<textbox id="textApm" maxlength="150" constraint="no empty"></textbox>
+							</hbox>
+						</row>
+						<row>
+							Fecha de Naciemiento
+							<hbox>
+							<datebox id="dateFec"  constraint="no empty,no future" format="dd/MM/yyyy" mold="rounded"></datebox>
+							</hbox>
+						</row>
+						<row>
+						Domicilio
+							<hbox>
+								<textbox id="textDom" maxlength="200" ></textbox>
+							</hbox>
+						</row>
+						<row>
+						CLABE
+							<hbox>
+								<textbox id="textCLABE" maxlength="20" ></textbox>
+							</hbox>
+						</row>
+						<row>
+							E-Mail
+							<hbox>
+								<textbox id="textEmail" maxlength="30"  constraint="no empty" ></textbox>
+							</hbox>
+						</row>
+							<row>
+							Password
+							<hbox>
+								<textbox id="txtPassword" type="password" maxlength="16"  constraint="no empty" ></textbox>
+							</hbox>
+						</row>
+						<row>
+							NIP
+							<hbox>
+								<intbox id="intNip" maxlength="4"   constraint="no empty" ></intbox>
+							</hbox>
+						</row>
+						   
+
+            <row>
+
+                Validation:
+
+                <vlayout>
+
+                    <hlayout>
+
+                        <textbox id="captchaInput" width="150px"  />
+
+                        <label id="captchaResult" />
+
+                        (Case Insensitive)
+
+                    </hlayout>
+
+                    <hlayout>
+
+                        <captcha id="cpa" length="6" width="150px" height="50px" bgColor="#FDC966" fontColor="#000000" frame="true"/>
+
+                        <vlayout>
+
+                            <button label="Regenerate" onClick='cpa.randomValue(); captchaInput.value=""' width="100px"  />
+
+                            <hlayout>
+
+                                <colorbox color="#FDC966" onChange="cpa.setBgColor(self.color); cpa.randomValue();" width="35px"/>
+
+                                <colorbox color="#000000" onChange="cpa.setFontColor(self.color); cpa.randomValue();" width="35px"/>
+
+                            </hlayout>
+
+                        </vlayout>
+
+                    </hlayout>
+
+                </vlayout>
+
+                <hlayout>
+
+                    <label sclass="hightlight">Captcha</label>and <label sclass="hightlight">Colorbox</label>
+
+                </hlayout>
+
+            </row>
+
+						
+						
+					</rows>
+				</grid>	
+				<?forward uri="/login.zul"?>
+				<label id="lblRegistro" value="Usuario registrado exitosamente, en un momento mas recibira un correo electronico para confirmar su registro" />
+				<label id="lblRegistro2" value="Usuario no registrado, favor de verificar" />
+				
+<toolbar id="tb" height="20px" sclass="toolbarColor">
+			<div>
+				<toolbarbutton id="btnGuardar"
+					image="/images/Floppy-16.png" tooltiptext="Guardar" >
+					  
+					</toolbarbutton>
+				
+			</div>
+		</toolbar>
+			</div>
+				
+		</center>	
+		
+		
+	</borderlayout>
+</window>
+ <zscript>
+
+    void validateText() {
+
+        captchaResult.value = validate() ? "OK": "Wrong";      
+
+    }
+
+    boolean validate() {
+
+        boolean check = cpa.value.equalsIgnoreCase(captchaInput.value);
+
+        captchaInput.setStyle(check ? "border:1px solid gray" : "border:2px solid red");
+
+        return check;
+
+    }
+
+     
+
+    </zscript>
+</zk>

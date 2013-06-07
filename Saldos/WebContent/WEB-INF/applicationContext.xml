@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+        ">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.mxinteligente" />
+	<tx:annotation-driven />
+
+
+	<bean id="wsTEst" class="com.mxinteligente.webservice.WSTest"	autowire="byName" />
+	<bean id="Saldo" class="com.mxinteligente.webservice.Saldo"	autowire="byName" />
+	
+
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost/edfindb" />
+		<property name="username" value="root" />
+	  	<property name="password" value="saldos2011" />	
+		<!--	<property name="password" value="saldos2011" />-->
+	</bean>
+
+    <bean id="sessionFactory"
+        class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property  name="packagesToScan" value="com.mxinteligente.model.entidades" />
+       <property name="mappingLocations"
+		value="classpath:com/mxinteligente/**/model/entidades/*.hbm.xml" />
+       
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                 
+            </props>
+        </property>
+    </bean>
+     
+      <!-- 
+      	<bean class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" id="passwordEncode"/> 
+      -->
+
+  <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com"/>
+        <property name="port" value="25"/>
+        <property name="username" value="avisos@saldo.mx"/>
+        <property name="password" value="gusfraba.1"/>
+        <property name="javaMailProperties">
+            <props>
+                <!-- Use SMTP transport protocol -->
+                <prop key="mail.transport.protocol">smtp</prop>
+                <!-- Use SMTP-AUTH to authenticate to SMTP server -->
+                <prop key="mail.smtp.auth">true</prop>
+                <!-- Use TLS to encrypt communication with SMTP server -->
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+            </props>
+        </property>
+    </bean>
+
+ <bean id="alertMailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from">            
+            <value>avisos@saldo.mx</value>
+        </property>
+        <property name="to">            
+            <value>avisos@saldo.mx</value>
+        </property>
+        <property name="subject" value="Alert - Exception occurred. Please investigate"/>
+    </bean>
+
+
+
+	 <bean id="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+	<bean id="context" class="com.mxinteligente.config.SpringApplicationContext" />
+		
+
+	
+	
+</beans>
+

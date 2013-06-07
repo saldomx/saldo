@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/05/2011 12:59:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.mxinteligente.model.entidades.Usuarios" table="usuarios" catalog="edfindb">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="email" type="string">
+            <column name="email" length="150" not-null="true" />
+        </property>
+          <property name="password" type="string">
+            <column name="password" length="300" not-null="true" />
+        </property>
+        <property name="nombre" type="string"   >
+            <column name="nombre" length="80" />
+        </property>
+        <property name="app" type="string"   >
+            <column name="App" length="150" />
+        </property>
+        <property name="apm" type="string"   >
+            <column name="Apm" length="150" />
+        </property>
+        <property name="estatus" type="java.lang.Integer"  >
+            <column name="estatus"  not-null="true"/>
+        </property>
+        <property name="nip" type="java.lang.Integer"   >
+            <column name="nip" />
+        </property>
+         <property name="rol" type="string"   >
+            <column name="rol" length="150" not-null="true"/>
+        </property>
+         <property name="fechnac" type="date" >
+            <column name="fechnac" length="20" not-null="true"/>
+        </property>
+         <property name="domicilio" type="string">
+            <column name="domicilio" length="200" />
+        </property>
+         <property name="clabe" type="string">
+            <column name="clabe" length="20" />
+        </property>
+          <property name="codigo" type="string"   >
+            <column name="codigo" length="25" />
+        </property>          
+         <property name="sexo" type="string"   >
+            <column name="sexo" />
+        </property>
+         <property name="isFB" type="string"   >
+            <column name="isFB" />
+        </property>
+        <!-- 
+        <set name="categresoses" inverse="true">
+            <key>
+                <column name="Usuarios_id" not-null="true" />
+            </key>
+            <one-to-many class="com.mxinteligente.model.entidades.Categresos" />
+        </set>
+        <set name="catingresoses" inverse="true">
+            <key>
+                <column name="Usuarios_id" not-null="true" />
+            </key>
+            <one-to-many class="com.mxinteligente.model.entidades.Catingresos" />
+        </set>
+         -->
+    </class>
+</hibernate-mapping>

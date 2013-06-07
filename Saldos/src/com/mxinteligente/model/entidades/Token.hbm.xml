@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/05/2011 12:59:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.mxinteligente.model.entidades.Tokens" table="tokens" catalog="edfindb">
+        <id name="sessionID" type="string">
+            <column name="sessionID" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="usuarioId" type="int">
+            <column name="usuarioId"  not-null="true" />
+        </property>
+          <property name="token" type="string">
+            <column name="token" length="100" not-null="true" />
+        </property>
+     </class>
+</hibernate-mapping>

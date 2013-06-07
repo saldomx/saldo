@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/05/2011 12:59:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.mxinteligente.model.entidades.Producto" table="productos" catalog="edfindb">
+    <!-- 
+        <composite-id name="id" class="com.mxinteligente.model.entidades.ProductoId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="usuariosId" type="int">
+                <column name="Usuarios_id" />
+            </key-property>
+            
+        </composite-id>
+        -->
+          <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+         <many-to-one name="users" class="com.mxinteligente.model.entidades.Usuarios"  update="false" insert="true" fetch="select">
+            <column name="Usuarios_id" not-null="true" />
+        </many-to-one>
+         <property name="code" type="string">
+            <column name="codigo" length="20" not-null="true" >
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="nombre" length="100" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="descripcion" length="300" />
+        </property>
+         <property name="price" type="big_decimal">
+            <column name="precio" precision="12" scale="0"  not-null="true" />
+        </property>
+         <property name="image1" type="string">
+            <column name="rutaImg1" length="300" />
+        </property>
+         <property name="estatus" type="string">
+            <column name="estatus" length="1" />
+        </property>
+        <property name="image2" type="string">
+            <column name="rutaImg2" length="300" />
+        </property>
+        <property name="image3" type="string">
+            <column name="rutaImg3" length="300" />
+        </property>
+         <property name="referencia" type="string">
+            <column name="referencia" length="50" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

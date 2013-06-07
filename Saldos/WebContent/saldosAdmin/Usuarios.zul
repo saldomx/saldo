@@ -1,0 +1,60 @@
+<?page title="Usuarios" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winAdmin"?>
+
+<zk>
+<style>
+        .z-label, .z-radio {
+          display:block;
+        }
+        tr.z-row td.z-row-inner {
+          padding: 2px 5px;
+        }
+        .z-row-cnt, .z-column-cnt {
+          text-align: center;
+        }
+        .category-center .z-auxheader-cnt {
+          text-align: center;
+        }
+        .footer_right {
+          text-align:right;
+        }
+        .opciones {
+          background-color: #FFFFFF;
+          height: 50px
+        }
+    </style>
+
+<window  id="winAdmin"  width="100%"	height="470px"  
+      apply="com.mxinteligente.controller.admin.UsuariosCtrl">
+      <borderlayout width="100%" >
+
+      <center autoscroll="true">
+      <div>
+     <toolbarbutton id="btnGenera" image="/images/Billing-32.png" tooltiptext="Genera codigos" />				
+      
+      <paging id="pg" pageSize="10" autohide="true" />
+		<listbox id="usuarios" >
+		<auxhead >
+            <auxheader>
+        	   <textbox id="filtroId" ></textbox>
+        	   
+            </auxheader>
+            
+        </auxhead>
+		
+		<listhead>
+			<listheader align="center" image="/images/user-16.png" label="Usuario"></listheader>
+			<listheader>Email</listheader>
+			<listheader>Nombre</listheader>
+			<listheader>Saldo</listheader>
+		</listhead>
+		
+		</listbox>
+		   </div>   
+      </center>
+      
+      </borderlayout>
+      
+      
+</window>
+</zk>

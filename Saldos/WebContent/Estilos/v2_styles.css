@@ -1,0 +1,112 @@
+body
+{
+	background-image: url(../images/v3_bg2.png);
+	background-color: #ffffff;
+	margin: 0px 0px;
+	background-repeat: repeat-x;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 LOGIN
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.center-div {
+    margin-left: auto;
+    margin-right: auto;
+    float: right;
+    width:340px;
+	height:30px;
+	margin:5px;
+    
+}
+
+.center-div h4 
+{
+	color: #ffffff;	
+}
+
+.leftImage {
+    float: left;
+}
+   
+.login-text {
+    color: #ffffff;
+}
+        
+.login-input-box {
+	color:#666666;
+	border:1px solid #ffffff;
+	background:url(../images/bg-input.png) no-repeat;
+	width: 200px;
+	}
+.login-button {
+	color:#666666;
+	font-weight:bold;
+	}
+
+.loginstatuslink
+{
+    font-weight: bold;
+    color: #FFF;
+}
+
+.loginstatuslink a:link { color:#FFF; text-decoration: none; font-weight: bold; font-size: 12px; }
+.loginstatuslink a:active { color:#FFF; text-decoration: none; font-weight: bold; font-size: 12px; }
+.loginstatuslink a:visited { color:#FFF; text-decoration: none; font-weight: bold; font-size: 12px; }
+.loginstatuslink a:hover { color:#FFF; text-decoration: underline; font-weight: bold; font-size: 12px; }
+
+.login-header
+{
+	background-color: #ffffff;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 Texto
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/		  
+.contenttext
+{
+    font-family:"Trebuchet MS",Arial; 
+    font-size:13px;
+	font-weight:normal;
+	font-style:normal;
+	color:#222222;
+}
+.contenttext a:link { color: #ffffff; text-decoration: underline; font-weight: normal}
+.contenttext a:active { color: #ffffff; text-decoration: none; font-weight: normal}
+.contenttext a:visited { color: #ffffff; text-decoration: none; font-weight: normal}
+.contenttext a:hover { color: #ffffff; text-decoration: underline; font-weight: normal}
+
+.button {
+   border-top: 1px solid #97f79d;
+   background: #41b068;
+   background: -webkit-gradient(linear, left top, left bottom, from(#1f632b), to(#41b068));
+   background: -webkit-linear-gradient(top, #1f632b, #41b068);
+   background: -moz-linear-gradient(top, #1f632b, #41b068);
+   background: -ms-linear-gradient(top, #1f632b, #41b068);
+   background: -o-linear-gradient(top, #1f632b, #41b068);
+   padding: 12.5px 25px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 20px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #287836;
+   background: #287836;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #42a639;
+   background: #42a639;
+   }

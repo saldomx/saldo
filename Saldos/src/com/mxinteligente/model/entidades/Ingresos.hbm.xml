@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/05/2011 12:59:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.mxinteligente.model.entidades.Ingresos" table="ingresos" catalog="edfindb">
+        <composite-id name="id" class="com.mxinteligente.model.entidades.IngresosId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="catIngresosUsuariosId" type="int">
+                <column name="CatIngresos_Usuarios_id" />
+            </key-property>
+            <key-property name="catIngresosId" type="int">
+                <column name="CatIngresos_id" />
+            </key-property>
+        </composite-id>
+         <many-to-one name="categoria" class="com.mxinteligente.model.entidades.Catingresos"  update="false" insert="false"  fetch="select">
+          <column name="CatIngresos_id" />
+           <column name="CatIngresos_Usuarios_id" />
+           
+            
+        </many-to-one>
+         <property name="fecha" type="timestamp">
+            <column name="fecha" length="20">
+            </column>
+            
+        </property>
+        <property name="concepto" type="string">
+            <column name="Concepto" length="300" />
+        </property>
+        <property name="cantidad" type="big_decimal">
+            <column name="Cantidad" precision="12" scale="0" />
+        </property>
+        
+          <property name="folio" type="big_integer">
+            <column name="folio"/>
+        </property>
+         <property name="contraparte" type="string">
+            <column name="contraparte" length="100" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

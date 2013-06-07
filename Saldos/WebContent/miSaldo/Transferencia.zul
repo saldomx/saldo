@@ -1,0 +1,45 @@
+<?page title="Transferencia" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winTrans"?>
+
+<zk>
+<window title="Transferencia" border="normal" id="winTrans" apply="com.mxinteligente.controller.general.Transferencia" 
+  width="300px" height="190px" closable="true">
+<toolbar id="tb"  height="20px" sclass="toolbarColor">
+			<div>
+				<toolbarbutton id="btnGuardar"
+					image="/images/Floppy-16.png" tooltiptext="Guardar" />
+				<toolbarbutton id="btnCancelar"
+					image="/images/Del-16.png" tooltiptext="Cancelar" />
+			</div>
+		</toolbar>
+		
+		<grid >
+        <columns>
+            <column label="" width="30%" align="left"/>
+            <column label="" width="80%" align="center"/>
+        </columns>
+        <rows>
+            <row>
+            	<label value="Usuario" />
+            	<textbox id="textUsuario" maxlength="200" width="180px"
+            		constraint="no empty" />
+            </row>
+             <row>
+            	<label value="Nip" />
+            	<intbox id="intNip" maxlength="4" width="180px"
+            		constraint="no empty" />
+            </row>
+            <row>
+            	<label value="Concepto" />
+            	<textbox id="textConcepto" maxlength="200" width="180px"
+            		constraint="no empty" />
+            </row>
+            <row>
+            <label value="Cantidad" />
+			<decimalbox id="decCantidad" maxlength="12" width="180px"
+				constraint="no empty" />
+            </row>
+            </rows>
+        </grid>
+</window>
+</zk>

@@ -1,0 +1,196 @@
+<style><![CDATA[
+
+.header {
+	background-image: url('https://www.saldo.mx/Saldos/images/img05.jpg');
+	/*background-image: url('https://www.saldo.mx/Saldos/images/img03.jpg');*/
+	background-repeat:repeat-x; 
+	margin: 0;
+	padding-left: 75px;
+border-bottom: 1px solid #454545;
+}
+/*
+.header {
+    background-color: #4D7A11;
+    border-bottom: 1px solid #454545;
+    color: white;
+    padding-left: 75px;
+}*/
+.header-bar {
+    height: 12px
+}
+.header-title1 {
+    color: white;
+    font-family: Tahoma;
+    font-size: 22px;
+    font-weight: bold;
+}
+.header-title2 {
+    color: #efefef;
+    font-family: Georgia;
+    font-size: 14px;
+    font-style: italic;
+}
+.center-left {
+    border-left: 1px solid #CFCFCF;
+    padding: 8px;
+}
+.center-left-inner {
+    border-right: 1px solid #CFCFCF;
+    color: #6f6f6f;
+}
+.center-right {
+    border-right: 1px solid #CFCFCF
+}
+.sidebar-title {
+    font-size: 13px;
+    font-weight: bold;
+}
+.sidebar-content {
+    font-size: 12px;
+font-weight: bold;
+color: #37392C;
+
+}
+.sidebar-bar {
+    border-top: 1px dotted gray;
+    margin-right: 5px;
+    margin-top: 15px;
+
+}
+.content-date {
+    color: #999999;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+.content-title {
+    color: #015182;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+}
+.content-title:hover {
+    text-decoration: underline
+}
+.content-desc {
+    color: gray;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 14px;
+    white-space: normal;
+}
+.content-more {
+    color: gray;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+table.reference
+{
+background-color:#ffffff;
+border:1px solid #c3c3c3;
+border-collapse:collapse;
+width:100%;
+}
+
+table.reference th
+{
+background-color:#e5eecc;
+border:1px solid #c3c3c3;
+padding:3px;
+vertical-align:top;
+}
+
+table.reference td 
+{
+border:1px solid #c3c3c3;
+padding:3px;
+vertical-align:top;
+}
+
+div.example
+{
+color:#000000;
+background-color:#e5eecc;
+margin:0px;
+padding:8px;
+border:1px solid #d4d4d4;
+background-image:url('https://www.saldo.mx/Saldos/images/bgfadegreen.gif');
+background-repeat:repeat-x;
+width:816px;
+height:390px;
+clear:both;
+margin-left: auto; 
+margin-right: auto;
+overflow:scroll;
+}
+
+div.example_code
+{
+background-color:#ffffff;
+padding:4px;
+border:1px solid #d4d4d4;
+width:606px;
+font-size:110%;
+font-family:courier new;
+}
+
+div.example_result
+{
+background-color:#ffffff;
+padding:4px;
+border:1px solid #d4d4d4;
+width:606px;
+}
+h2.example,h2.example_head
+{
+color:#617f10;
+background-color:transparent;
+margin-top:0px;
+}
+h2.example {font-size:120%;}
+h2.example_head {font-size:140%;}
+hr
+{
+background-color:#d4d4d4;
+color:#d4d4d4;
+height:1px;
+border:0px;
+clear:both;
+}
+div.example_code
+{
+background-color:#ffffff;
+padding:4px;
+border:1px solid #d4d4d4;
+width:606px;
+font-size:110%;
+font-family:courier new;
+}
+
+div.example_result
+{
+background-color:#ffffff;
+padding:4px;
+border:1px solid #d4d4d4;
+width:606px;
+}
+
+
+
+
+
+.footer {
+	background-image: url('https://www.saldo.mx/Saldos/images/img05.jpg');
+	/*	background-image: url('http://50.57.140.59:8080/Saldos/images/img03.jpg');*/
+background-repeat:repeat-x; 
+margin: 0;
+padding-left: 75px;
+    border-top : 1px solid gray;
+    color: #EFEFEF;
+    text-align: center;
+}
+]]></style>

@@ -1,0 +1,29 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Generar códigos" id="win" closable="true"
+border="normal" width="400px" height="150px" apply="com.mxinteligente.controller.admin.GeneraCodigosCtl">
+<borderlayout>
+<center>
+<grid>
+		<columns>
+			<column label="" align="right"/>
+			<column label="" align="left"/>
+		</columns>
+		<rows>
+			<row>
+				Numero de Códigos a generar	
+				<intbox id="cantidad" maxlength="3" constraint="no empty" />
+			</row>
+			<row>
+				Monto de los Códigos
+				<textbox id="monto" maxlength="6" constraint="no empty,/^[0-9]+\.*[0-9]{2}/" />
+			</row>
+			<row>
+				<button id="btnGenera" label="Generar" />
+			</row>
+			
+		</rows>
+	</grid>
+</center></borderlayout>
+</window>
+</zk>

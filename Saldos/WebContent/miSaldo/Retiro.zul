@@ -1,0 +1,35 @@
+<?page title="Transferencia" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winRet"?>
+
+<zk>
+<window title="Retiro de Efectivo" border="normal" id="winRet" apply="com.mxinteligente.controller.general.Retiro" 
+  width="300px" height="138px" closable="true">
+<toolbar id="tb"  height="20px" sclass="toolbarColor">
+			<div>
+				<toolbarbutton id="btnGuardar"
+					image="/images/Floppy-16.png" tooltiptext="Guardar" />
+				<toolbarbutton id="btnCancelar"
+					image="/images/Del-16.png" tooltiptext="Cancelar" />
+			</div>
+		</toolbar>
+		
+		<grid >
+        <columns>
+            <column label="" width="30%" align="left"/>
+            <column label="" width="80%" align="center"/>
+        </columns>
+        <rows>
+            <row>
+            	<label value="Email Agencia" />
+            	<textbox id="textEmail" maxlength="200" width="180px"
+            		constraint="no empty" />
+            </row>
+            <row>
+            <label value="Cantidad" />
+			<decimalbox id="decCantidad" maxlength="12" width="180px"
+				constraint="no empty" />
+            </row>
+            </rows>
+        </grid>
+</window>
+</zk>

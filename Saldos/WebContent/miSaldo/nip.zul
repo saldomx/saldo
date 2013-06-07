@@ -1,0 +1,25 @@
+<?page title="Transferencia" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winNip"?>
+
+<zk>
+<window title="NIP" border="normal" id="winNip"  
+  width="300px" height="100px" closable="true">
+		<grid >
+        <columns>
+            <column label="" width="30%" align="left"/>
+            <column label="" width="80%" align="center"/>
+        </columns>
+        <rows>
+             <row>
+            	<label value="Nip" />
+            	<intbox id="intNip" maxlength="4" width="180px"
+            		constraint="no empty" />
+            </row>
+            <row>
+            <label></label>
+             	<button id="btnConfirmar" label="Confirmar" ></button>
+            </row>
+            </rows>
+        </grid>
+</window>
+</zk>

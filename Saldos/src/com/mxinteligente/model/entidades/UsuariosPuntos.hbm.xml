@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/05/2011 12:59:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.mxinteligente.model.entidades.UsuariosPuntos" table="usuarios_puntos" catalog="edfindb">
+          <composite-id
+            name="id"
+            class="com.mxinteligente.model.entidades.UsuariosPuntosId" >
+            
+            <key-property  name="email" type="string" >
+                <column name="email"  length="100" />
+            </key-property>
+        
+        	  <key-property  name="codigo" type="string" >
+                <column name="codigo"  length="20" />
+            </key-property>
+            
+         	 <key-property  name="idEncuesta" type="java.lang.Integer" >
+                <column name="idEncuesta"  />
+            </key-property>
+            
+         	<key-property  name="indice" type="java.lang.Integer" >
+                <column name="indice"  />
+            </key-property>
+         	 
+        </composite-id>
+        
+        <property name="emailVendor" type="string">
+            <column name="email_vendor" length="100" not-null="true" />
+        </property>
+        
+         <property name="puntos" type="java.lang.Integer" >
+            <column name="puntos"  />
+        </property>
+        
+          <property name="fechaPuntos" type="date" >
+            <column name="fecha_puntos" length="20" />
+        </property>
+        
+           <property name="fechaRedencion" type="date" >
+            <column name="fecha_redencion" length="20" />
+        </property>
+        
+            <property name="redimido" type="string">
+            <column name="redimido" length="1" not-null="true" />
+        </property>
+        
+        <!-- 
+        <set name="categresoses" inverse="true">
+            <key>
+                <column name="Usuarios_id" not-null="true" />
+            </key>
+            <one-to-many class="com.mxinteligente.model.entidades.Categresos" />
+        </set>
+        <set name="catingresoses" inverse="true">
+            <key>
+                <column name="Usuarios_id" not-null="true" />
+            </key>
+            <one-to-many class="com.mxinteligente.model.entidades.Catingresos" />
+        </set>
+         -->
+    </class>
+</hibernate-mapping>

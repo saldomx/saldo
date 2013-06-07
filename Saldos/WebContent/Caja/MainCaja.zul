@@ -1,0 +1,25 @@
+<zk>
+<include id="includeStyle" src="/Estilos/style.zul" />
+	<borderlayout width="100%" height="100%"  >
+		<north border="none" size="10%" class="header"  >
+			<include src="/main/header.zul" />
+		</north>
+		<center border="none" flex="true" class="center">
+		
+		<div>
+		<hbox height="100px">
+				
+			</hbox>
+		<hbox>
+		
+		<separator width="300px" ></separator>
+			<include src="/Caja/caja.zul" />
+		</hbox>
+			
+			</div>
+		</center>
+		<south border="none" class="footer" size="10%">
+			<include src="/main/footer.zul" />
+		</south>
+	</borderlayout>
+</zk>

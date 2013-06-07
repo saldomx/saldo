@@ -1,0 +1,104 @@
+<?page title="Nuevo Ingreso" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winRec"?>
+
+<zk>
+<window id="winRec" title="Recargar"   border="normal" apply="com.mxinteligente.controller.general.Recarga" 
+  width="450px" height="470px" >
+  <groupbox mold="3d">
+   <caption>
+          <div  align="center" id="arrow"  class="open-false">Recarga de Saldo</div>
+   </caption>
+		<grid width="100%" height="100%">
+        <columns>
+            <column label="" width="30%" />
+            <column label="" width="70%" />
+        </columns>
+        <rows>
+            <row>
+                <label  value="Nombre" style="font-weight:bold;"/>
+                <hlayout>
+                  <textbox id="textNombre" maxlength="200" width="250px"
+            		constraint="no empty" />
+                </hlayout>
+            </row>
+            <row>
+            	<label value="Apellidos" style="font-weight:bold;"/>
+            	<textbox id="textApellidos" maxlength="200" width="250px"
+            		constraint="no empty" />
+            </row>
+            <row>
+            	<label value="Cantidad" style="font-weight:bold;"/>
+            	
+            
+				<combobox id="cmbCantidad" width="150px" mold="rounded" constraint="no empty" readonly="true" >
+    				<comboitem id="idtres" label="$300.00" value="300"  />
+    				<comboitem id="idcinco" label="$500.00" value="500" />
+    				<comboitem id="iduno" label="$2.00" value="2" />
+    				<attribute name="onAfterRender">
+						self.setSelectedIndex(0);
+					</attribute>
+				</combobox>
+			
+            </row>
+            <row>
+            <label value="Tipo" style="font-weight:bold;"/>
+            	<combobox id="CreditCard" width="150px" mold="rounded" constraint="no empty" readonly="true" >
+    				<comboitem id="amex" label="American Express" value="Amex" image="/images/amex.png"  />
+    				<comboitem id="discover" label="Discover" value="Discover" image="/images/discover.png" />
+    				<comboitem id="mastercard" label="Mastercard" value="MasterCard" image="/images/mastercard.png"  />
+    				<comboitem id="solo" label="Solo" value="Solo" image="/images/solo.png" />
+    				<comboitem id="visa" label="Visa" value="Visa" image="/images/visa.png" />
+    				<attribute name="onAfterRender">
+						self.setSelectedIndex(0);
+					</attribute>
+				</combobox>
+            </row>
+             <row>
+            	<label value="Cuenta" style="font-weight:bold;" />
+				<textbox id="numeroCuenta" width="180px"  constraint="no empty" />
+				
+             </row>
+             <row>
+             	<label value="Codigo" style="font-weight:bold;"/>
+				<textbox id="codigo" width="100px"  constraint="no empty" />
+             </row>
+              <row>
+             	<label value="Fecha de Expiración" style="font-weight:bold;"/>
+				<datebox id="fchExpiracion" width="100px"  constraint="no empty" />
+             </row>
+             <row>
+            	<label value="País" style="font-weight:bold;" />
+            	<combobox id="cmbPais"  width="150px" mold="rounded" readonly="true" constraint="no empty" >
+            	</combobox>
+            </row>
+            <row>
+            	<label value="Estado" style="font-weight:bold;"/>
+            	<combobox id="cmbEstado" width="150px" mold="rounded" readonly="true" constraint="no empty">
+            	<attribute name="onAfterRender">
+					self.setSelectedIndex(0);
+				</attribute>
+            	</combobox>
+            </row>
+            <row>
+            	<label value="Ciudad" style="font-weight:bold;"/>
+				<textbox id="textCiudad" width="180px"  constraint="no empty" />
+
+            </row>
+            <row>
+            	<label value="Domicilio" style="font-weight:bold;"/>
+				<textbox id="textCalle" width="180px"  constraint="no empty" />
+
+            </row>
+             <row>
+            	<label value="Código Postal" style="font-weight:bold;"/>
+				<textbox id="textCP" width="100px"  constraint="no empty" />
+
+            </row>
+              <row>
+				<button id="btnAceptar" label="Aceptar" ></button>
+            </row>
+            </rows>
+        </grid>
+        </groupbox>
+</window>
+</zk>

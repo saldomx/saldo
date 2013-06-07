@@ -1,0 +1,53 @@
+<?page title="Buscar..." contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winBusqueda"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="i"?>
+
+<zk>
+	<window id="winBusqueda" title="${i:l('tituloBuscar')}" border="normal" sizable="true" 
+		apply="com.mxinteligente.infra.controller.BusquedaFiltro" closable="true" width="750px" 
+		height="305px">
+
+		<borderlayout>
+			
+			<center flex="true" autoscroll="true">
+			<div>
+			<groupbox mold="3d" width="100%" id="panelBusqueda"
+					open="false" visible="false" >
+					<caption label="${i:l('buscarPor')}" tooltiptext="Click para desplegar las opciones"></caption>
+						
+						<button id="btnFiltrar" label="Buscar" ></button>
+						<listbox id="lstFiltro" multiple="true" checkmark="true">
+						<listitem id="camposFiltro">
+
+						</listitem>
+						<listitem id="camposValor">
+
+						</listitem>
+					</listbox>
+					
+			</groupbox>
+				<div>
+
+
+					<paging id="paginacion" pageSize="10" />
+					<listbox id="box" maxlength="1200" height="235px" >
+						<listhead id="encabezado">
+
+						</listhead>
+						<auxhead id="headFiltro">
+						
+						</auxhead>
+						<listitem id="itemCeldas" >
+
+						</listitem>
+					</listbox>
+				</div>
+				</div>
+			</center>
+			
+			
+		</borderlayout>
+
+
+	</window>
+</zk>

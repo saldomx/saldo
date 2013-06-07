@@ -1,0 +1,39 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winRec"?>
+
+<zk>
+<window title="" border="none" id="winRec" apply="com.mxinteligente.controller.admin.Caja" 
+  width="300px" height="200px" closable="true">
+<toolbar id="tb"  height="20px" sclass="toolbarColor">
+			<div>
+				<toolbarbutton id="btnGuardar" 
+					image="/images/Floppy-16.png" tooltiptext="Guardar" />
+			</div>
+		</toolbar>
+		
+		<grid >
+        <columns>
+            <column label="" width="30%" align="left"/>
+            <column label="" width="80%" align="center"/>
+        </columns>
+        <rows>
+            <row>
+            	<label value="Email" />
+            	<textbox id="textEmail" maxlength="200" width="180px"
+            		constraint="no empty" />
+            </row>
+            <row>
+            <label value="Cantidad" />
+			<decimalbox id="decCantidad" maxlength="12" width="180px"
+				constraint="no empty, no zero, no negative" />
+            </row>
+            
+             <row>
+            	<label value="Nip" />
+            	<intbox id="intNip" maxlength="4" width="180px"
+            		constraint="no empty" />
+            </row>
+            </rows>
+        </grid>
+</window>
+</zk>

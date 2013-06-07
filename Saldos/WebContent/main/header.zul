@@ -1,0 +1,25 @@
+<vlayout>
+    <separator class="header-bar"  visible="false"/>   
+   <image id="image3"  src="/images/saldobarra.jpg" />
+ 
+					 	
+					
+					 	<html>
+							<![CDATA[ 
+								
+									
+									<div style="margin-top:-25px;
+										margin-right:5px; float: right">        
+											<span style="color: #ffffff;
+											font-family:'Trebuchet MS',Arial;
+											font-size:12px;">
+											<a href="../j_spring_security_logout" 
+											style="color: #ffffff; font-family:'Trebuchet MS',Arial; font-size:12px;">Salir</a>
+											</span>
+									</div> 
+							
+								
+									 ]]>
+						</html>
+	
+</vlayout>

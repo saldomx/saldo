@@ -1,0 +1,56 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winProds"?>
+
+<zk>
+<style>
+        .z-label, .z-radio {
+          display:block;
+        }
+        tr.z-row td.z-row-inner {
+          padding: 2px 5px;
+        }
+        .z-row-cnt, .z-column-cnt {
+          text-align: center;
+        }
+        .category-center .z-auxheader-cnt {
+          text-align: center;
+        }
+        .footer_right {
+          text-align:right;
+        }
+        .opciones {
+          background-color: #FFFFFF;
+          height: 50px
+        }
+    </style>
+
+<window  id="winProds"  width="100%"	height="470px"  
+      apply="com.mxinteligente.controller.ventas.Productos">
+      <borderlayout width="100%" >
+
+      <center autoscroll="true">
+      <div>
+     <toolbarbutton id="btnAgregar" image="/images/categoria-32.png" tooltiptext="Agregar Producto" />
+     
+     <toolbarbutton id="btnSaldos" image="/images/Application-16.png" tooltiptext="Historial de Ventas" />				
+     				
+      
+      <paging id="pg" pageSize="4" autohide="true" />
+		<listbox id="productos" >
+		
+		<listhead>
+			<listheader align="center" label="Producto"></listheader>
+			<listheader>Codigo</listheader>
+			<listheader>Nombre</listheader>
+			<listheader>Precio</listheader>
+		</listhead>
+		
+		</listbox>
+		   </div>   
+      </center>
+      
+      </borderlayout>
+      
+      
+</window>
+</zk>

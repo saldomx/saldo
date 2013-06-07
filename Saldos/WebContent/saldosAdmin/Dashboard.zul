@@ -1,0 +1,21 @@
+<zk>
+<include id="includeStyle" src="/Estilos/style.zul" />
+	<borderlayout width="100%" height="100%"  >
+		<north border="none" size="10%" class="header"  >
+			<include src="/main/header.zul" />
+		</north>
+		<center border="none" flex="true" class="center">
+			<hlayout>
+				
+				
+				<div hflex="60" vflex="1" class="center-right">
+					<include src="/saldosAdmin/Usuarios.zul" />
+				</div>
+				
+			</hlayout>
+		</center>
+		<south border="none" class="footer" size="10%">
+			<include src="/main/footer.zul" />
+		</south>
+	</borderlayout>
+</zk>

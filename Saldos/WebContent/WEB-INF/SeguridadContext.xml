@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security" 
+xmlns:beans="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+http://www.springframework.org/schema/security 
+http://www.springframework.org/schema/security/spring-security-2.0.1.xsd"> 
+
+	<http auto-config="true" access-decision-manager-ref="accessDecisionManager">
+
+		<!-- <intercept-url pattern="/api/**" access="ROLE_USER" /> -->
+		<intercept-url pattern="/miSaldo/**" access="ROLE_USER, ROLE_ADMIN, ROLE_VENDEDOR" />
+		<intercept-url pattern="/main/**" access="ROLE_USER, ROLE_ADMIN, ROLE_CAJA, ROLE_VENDEDOR" />
+		<intercept-url pattern="/Admin/**" access="ROLE_ADMIN" />
+		<intercept-url pattern="/saldosAdmin/**" access="ROLE_ADMIN" />
+    	<intercept-url pattern="/usuarios/**" access="ROLE_ADMIN" />
+    	<intercept-url pattern="/Caja/**" access="ROLE_CAJA" />
+    	<intercept-url pattern="/Ventas/**" access="ROLE_VENDEDOR" />
+    	
+    	
+	    <logout logout-success-url="/Autentificar/login.jsp"/> 
+	    <form-login login-page="/Autentificar/login.jsp" default-target-url="/terminos.zul" authentication-failure-url="/Autentificar/login.jsp?error=true"/>
+	</http>
+	
+	<beans:bean id="accessDecisionManager"
+        class="org.springframework.security.vote.AffirmativeBased">
+        <beans:property name="decisionVoters">
+            <beans:list>
+            	<beans:bean
+					class="org.springframework.security.vote.RoleVoter" />
+				<beans:bean
+					class="org.springframework.security.vote.AuthenticatedVoter" />
+            </beans:list>
+        </beans:property>
+    </beans:bean>
+    
+    <authentication-provider>
+	<password-encoder hash="sha"/>
+	 <jdbc-user-service data-source-ref="dataSource"
+        users-by-username-query="select email as username, password as password, estatus as enabled from usuarios where email = ?"
+        authorities-by-username-query="select email as username, rol as authorities from usuarios where email = ?"
+        />
+	</authentication-provider>
+	
+	<beans:bean class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" id="passwordEncoder"/> 
+	<!-- 
+	<authentication-provider>
+		<user-service>
+			<user name="admin" password="admin"	authorities="ROLE_ADMIN" />
+			<user name="marcomox@gmail.com" password="marco" authorities="ROLE_USER" />
+			<user name="fermsx@gmail.com" password="fernando" authorities="ROLE_USER" />
+			<user name="303@mexpediente.com" password="user3" authorities="ROLE_USER" />
+		</user-service>
+	</authentication-provider>
+	 -->
+	
+	
+
+</beans:beans> 

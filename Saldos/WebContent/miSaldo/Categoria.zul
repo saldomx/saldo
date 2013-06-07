@@ -1,0 +1,41 @@
+<?page title="Nueva Categoria" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winCat"?>
+<zk>
+	<window id="winCat" title="Nueva Categoria" border="normal"
+		closable="true" width="300px" height="125px"
+		apply="com.mxinteligente.controller.general.Categoria">
+		<toolbar id="tb" height="20px" sclass="toolbarColor">
+			<div>
+				<toolbarbutton id="btnGuardar"
+					image="/images/Floppy-16.png" tooltiptext="Guardar" />
+				<toolbarbutton id="btnCancelar"
+					image="/images/Del-16.png" tooltiptext="Cancelar" />
+			</div>
+		</toolbar>
+		
+		<grid >
+        <columns>
+            <column label="" width="30%" align="left"/>
+            <column label="" width="80%" align="center"/>
+        </columns>
+        <rows>
+            <row>
+                <label  value="Tipo" />
+                <hlayout>
+                    <radiogroup id="tipoCat" orient="horizontal">
+				<hlayout>
+					<radio label="Ingreos" checked="true" value="1" />
+					<radio label="Gasto" value="2" />
+				</hlayout>
+			</radiogroup>
+                </hlayout>
+            </row>
+            <row>
+            <label value="Categoria" />
+			<textbox id="categoria" maxlength="200" width="200px"
+				constraint="no empty" />
+            </row>
+            </rows>
+        </grid>
+	</window>
+</zk>
